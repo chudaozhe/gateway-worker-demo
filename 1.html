@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function() {
+            //ws://blog.cw.net/ws
+            ws = new WebSocket("ws://127.0.0.1:9502");
+            ws.onopen = function() {
+                console.log("连接成功");
+            };
+            ws.onmessage = function(e) {
+                console.log("收到服务端的消息：" + e.data);
+            };
+        }
+       function send(msg){
+           ws.send(msg);
+           console.log("给服务端发送一个字符串："+msg);
+       }
+    </script>
+</head>
+<body>
+<button onclick="send('uu')">发送</button>
+</body>
+</html>
