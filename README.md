@@ -41,6 +41,7 @@ haha
 ## 使用域名
 https://manual.workerman.net/doc/zh-cn/faq/secure-websocket-server.html
 
+http://nginx.org/en/docs/http/websocket.html
 ```
     location /ws {
         proxy_pass http://docker-php-fpm:9502;
